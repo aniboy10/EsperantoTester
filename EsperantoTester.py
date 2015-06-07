@@ -13,7 +13,7 @@
 #  																																					#
 #																																					#
 #																																					#
-# 											------ Todo is attatched at end of the 'Main' function! ------- 										#
+# 											------ Todo is attached at end of the 'Main' function! ------- 										#
 #  																																					#
 # 	~ William James Angus, 2015 																													#
 # 	~ Version: 0.0.1 																																#
