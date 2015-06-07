@@ -13,7 +13,7 @@
 #  																																					#
 #																																					#
 #																																					#
-# 											------ Todo is attached at end of the 'Main' function! ------- 										#
+# 											------ Todo is attached at end of the 'Main' function! ------- 											#
 #  																																					#
 # 	~ William James Angus, 2015 																													#
 # 	~ Version: 0.0.1 																																#
@@ -43,13 +43,14 @@ import inspect
 import shutil
 import urllib.request
 import os
+import random
 
 def Main():
 
 	# Version of the program! 
 	version 			= '0.0.1'
 
-	# Performs a function to check if it needs to be updated, and if so, it updates itself!
+	# Performs a function to check if it needs to be updatesated, and if so, it updates itself!
 	checkUpdate(version)
 
 	# The list of languages to be tested.
@@ -171,13 +172,15 @@ def checkUpdate(version):
 
 	versionString = "~ Version: " + str(version)
 	thisFileAddress = inspect.getsourcefile(sys.modules[__name__])
-	url = "https://raw.githubusercontent.com/aniboy10/Password-generator/master/password_generator.py"
-	with urllib.request.urlopen(url) as response, open(thisFileAddress, 'wb') as out_file:
-		if str(response.read()).find(str(versionString)) > 0:
-			with urllib.request.urlopen(url) as response, open(thisFileAddress, 'wb') as out_file:
-				shutil.copyfileobj(response, out_file)
-			python = sys.executable
-			os.execl(python, python, * sys.argv)
+	url = "https://raw.githubusercontent.com/aniboy10/EsperantoTester/master/EsperantoTester.py"
+	response = urllib.request.urlopen(url)
+	print(str(response.read()).find(str(versionString)))
+	if str(response.read()).find(str(versionString)) < 0:
+		with urllib.request.urlopen(url) as response, open(thisFileAddress, 'wb') as out_file:
+			print(response)
+			shutil.copyfileobj(response, out_file)
+		python = sys.executable
+		os.execl(python, python, * sys.argv)
 
 
 if __name__ == '__main__':
